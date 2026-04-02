@@ -1,2 +1,12 @@
 # is120-hw11-aaron-garry
 JavaScript API Cards
+
+For this project only one API call was used. This was important because it takes time to do this and the timing of the program can get messed up each time it tries to do it. As a front end developer this makes things simple. It also could cost more money if you needed to make multiple API calls. For an API developer you only want people calling it once so it does not slow their systems down. 
+Local storage is helpful here so peoples selections of favorites can be saved. If they were not saved the user would have to re check their favorites every time they loaded the page. This would be especially useful if someone had preferences they wanted each time they visited a website. I also imagine this would be great for online shopping if the user had items in a cart and did not have an account created. 
+If the user selected something that the API did not return they might get an error in the function that is running. The user would experience a lack of information and also not be able to save their favorite card or item. This could be fixed through error handling. You could add continue if something breaks or display a message to the user so they know they cannot select that. 
+
+The hardest part was trying to save cards to an array. My idea was to have a counter and a number for each check box and div. I Needed help from AI to get this line favorites.push(parseInt(checkBox.id.replace("box", ""))); 
+this was so I could use the id for the check boxes to get the ID for the card Div and clone it into the favorites section. I learned how to clone a div and its child elements using .cloneNode(true)
+I then found it better to just do favorites.push(checkBox.id.replace("box", "")) so I wouldn't have to turn it back into a string later.
+Because of this I had to use get element by ID (I know, forbidden) because query selector would not let me find something starting with a number. Not sure why. 
+As I think about how I could have done this better think I could have just added a value to the input checkboxes and make those values the same as the card ID that way I would not need to do so much converting between the input id and card id. 
